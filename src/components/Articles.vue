@@ -85,7 +85,7 @@ export default {
       let _this = this;
       console.log(this.search);
       return items.filter(function (item) {
-        return item.categoryId == _this.catId;
+        return item.categoryId == _this.catId && item.status == 'published';
       });
     },
     getDateDiff(dateUpdated) {

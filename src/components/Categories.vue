@@ -31,6 +31,8 @@
                 ago</span
               >
             </div>
+          
+
           </div>
         </div>
       </div>
@@ -64,10 +66,12 @@ export default {
       
       if (_this.btnText != "") {
         return items.filter(function (item) {
-          return item.title.toLowerCase().includes(_this.btnText.toLowerCase());
+          return item.title.toLowerCase().includes(_this.btnText.toLowerCase()) &&  item.enabled == true;
         });
       } else {
-        return items;
+        return items.filter(function (item) {
+          return item.enabled == true;
+        });
       }
     },
 
